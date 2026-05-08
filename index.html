@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railtrack - Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Funnel+Display:wght@800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --md-sys-color-primary: #006874;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #97f0ff;
+            --md-sys-color-on-primary-container: #001f24;
+            --md-sys-color-surface: #f8fdff;
+            --md-sys-color-on-surface: #191c1d;
+            --md-sys-color-surface-container: #eceff0;
+            --md-sys-color-outline: #6f797a;
+            --md-sys-color-secondary-container: #d3e5e8;
+            --md-sys-color-on-secondary-container: #051f23;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--md-sys-color-surface);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid var(--md-sys-color-surface-container);
+            z-index: 10;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Funnel Display', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--md-sys-color-primary);
+            letter-spacing: -1.5px;
+            text-transform: none;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background-color: var(--md-sys-color-surface-container);
+            border-radius: 100px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .lang-btn {
+            border: none;
+            background: none;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--md-sys-color-on-surface);
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--md-sys-color-surface-container);
+        }
+
+        #content h1 { display: none; }
+        
+        #content h2 {
+            font-size: 24px;
+            color: var(--md-sys-color-primary);
+            margin-top: 32px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--md-sys-color-surface-container);
+            padding-bottom: 8px;
+        }
+
+        #content h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            font-weight: 600;
+        }
+
+        #content p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        #content ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        #content li {
+            margin-bottom: 8px;
+        }
+
+        #content a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #content a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 14px;
+            color: var(--md-sys-color-outline);
+        }
+
+        @media (max-width: 600px) {
+            main { padding: 16px; }
+            .card { padding: 20px; border-radius: 16px; }
+            header { padding: 12px 16px; }
+            .logo-text { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-text">Railtrack</div>
+        </div>
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="setLang('it')">ITA</button>
+            <button class="lang-btn" onclick="setLang('en')">ENG</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div id="content"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Railtrack. All rights reserved.
+    </footer>
+
+    <script>
+        const policies = {
+            it: `# Norme sulla privacy per Railtrack
+
+Ultimo aggiornamento: 8 maggio 2026
+
+## 1. Introduzione
+Railtrack si impegna a proteggere la tua privacy. Questa informativa sulla privacy spiega come raccogliamo, utilizziamo e condividiamo i tuoi dati quando utilizzi l'app Railtrack.
+
+## 2. Dati raccolti
+L'app Railtrack raccoglie i seguenti tipi di dati:
+
+### a. Posizione del dispositivo
+L'app utilizza i servizi di localizzazione (GPS) per identificare la stazione ferroviaria più vicina alla tua posizione attuale. Questi dati vengono elaborati esclusivamente in tempo reale e localmente sul dispositivo per fornire suggerimenti pertinenti; non vengono MAI inviati o memorizzati sui nostri server.
+
+### b. Informazioni sul dispositivo e sull'utilizzo
+Quando invii volontariamente una segnalazione di errore o un feedback tramite l'app, raccogliamo le seguenti informazioni per aiutarci a diagnosticare e risolvere i problemi:
+- Versione di Android
+- Marca e modello del dispositivo
+- Versione dell'app
+- Timestamp della segnalazione
+- Titolo e descrizione forniti dall'utente
+
+Inoltre, i servizi pubblicitari di terze parti possono raccogliere identificativi del dispositivo (come l'ID pubblicitario di Android) per finalità di analisi e personalizzazione degli annunci.
+
+### c. Dati memorizzati localmente
+L'app memorizza esclusivamente sul tuo dispositivo i seguenti dati per consentirne il funzionamento e migliorare l'esperienza d'uso:
+- Stazioni e treni contrassegnati come preferiti
+- Cronologia delle ricerche recenti
+- Impostazioni del tema (Chiaro, Scuro o di Sistema)
+- Stato del completamento dell'onboarding
+- Versione dell'ultimo changelog visualizzato
+- Preferenze di notifica e aggiornamento automatico
+
+Questi dati risiedono unicamente nella memoria locale del tuo smartphone e non vengono mai sincronizzati con servizi cloud esterni gestiti da noi.
+
+## 3. Modalità di trattamento e finalità
+I dati vengono trattati esclusivamente per:
+- Fornire le funzionalità principali dell'app (es. ricerca stazioni vicine).
+- Migliorare la stabilità dell'app e correggere eventuali bug tramite le segnalazioni inviate.
+- Mostrare annunci pubblicitari pertinenti tramite i servizi di terze parti.
+
+Utilizziamo metodi moderni di crittografia (HTTPS) per la trasmissione di qualsiasi dato verso i nostri servizi cloud.
+
+## 4. Servizi di terze parti
+Railtrack utilizza i seguenti servizi di terze parti per il suo funzionamento:
+
+- **Google Firebase (Cloud Firestore & Remote Config):** Utilizzato per la ricezione delle segnalazioni di errore e per la configurazione dinamica dell'app.
+- **Google AdMob:** Utilizzato per mostrare annunci pubblicitari. AdMob può raccogliere dati sull'utilizzo e identificativi del dispositivo per la personalizzazione degli annunci. Consulta le [Norme sulla privacy di Google](https://policies.google.com/privacy) per ulteriori dettagli.
+- **API ViaggiaTreno/Trenitalia:** L'app interroga API pubbliche per fornire informazioni in tempo reale sui treni. Non vengono inviati dati personali a questi servizi durante le query.
+
+## 5. Condivisione dei dati
+Non vendiamo i tuoi dati personali a terze parti. I dati sono condivisi con i fornitori di servizi sopra menzionati solo nella misura necessaria per il funzionamento dell'app e dei servizi pubblicitari. I dati possono essere condivisi se richiesto dalla legge o per proteggere i nostri diritti legali.
+
+## 6. Conservazione ed eliminazione dei dati
+- **Dati locali:** Le preferenze e i dati memorizzati localmente possono essere eliminati in qualsiasi momento cancellando i dati dell'app dalle impostazioni di Android o disinstallando l'app.
+- **Segnalazioni:** Le segnalazioni inviate tramite Firestore sono conservate per il tempo necessario alla risoluzione del problema segnalato. Puoi richiedere l'eliminazione di eventuali dati inviati contattandoci all'indirizzo fornito di seguito.
+
+## 7. Diritti dell'utente
+In conformità con il GDPR e altre leggi vigenti sulla protezione dei dati, hai il diritto di accedere, rettificare o richiedere l'eliminazione dei tuoi dati. Poiché l'app non richiede la creazione di un account, la maggior parte dei dati è gestibile direttamente tramite il dispositivo.
+
+## 8. Contatti
+Per domande o richieste relative alla tua privacy, puoi contattarci all'indirizzo:
+railtrack.dev@gmail.com
+
+---
+*Nota: Questa informativa è soggetta a modifiche. Ti consigliamo di consultarla regolarmente.*`,
+            en: `# Privacy Policy for Railtrack
+
+Last updated: May 8, 2026
+
+## 1. Introduction
+Railtrack is committed to protecting your privacy. This privacy policy explains how we collect, use, and share your data when you use the Railtrack app.
+
+## 2. Data Collection
+The Railtrack app collects the following types of data:
+
+### a. Device Location
+The app uses location services (GPS) to identify the nearest train station to your current location. This data is processed exclusively in real-time and locally on the device to provide relevant suggestions; it is NEVER sent to or stored on our servers.
+
+### b. Device and Usage Information
+When you voluntarily submit a bug report or feedback through the app, we collect the following information to help us diagnose and resolve issues:
+- Android version
+- Device brand and model
+- App version
+- Report timestamp
+- Title and description provided by the user
+
+Additionally, third-party advertising services may collect device identifiers (such as the Android Advertising ID) for analysis and ad personalization purposes.
+
+### c. Locally Stored Data
+The app stores the following data exclusively on your device to enable its functionality and improve your user experience:
+- Stations and trains marked as favorites
+- Recent search history
+- Theme settings (Light, Dark, or System)
+- Onboarding completion status
+- Last viewed changelog version
+- Notification and auto-refresh preferences
+
+This data resides solely in your smartphone's local memory and is never synchronized with external cloud services managed by us.
+
+## 3. Data Processing and Purpose
+Data is processed exclusively to:
+- Provide core app functionality (e.g., searching for nearby stations).
+- Improve app stability and fix bugs through submitted reports.
+- Display relevant advertisements through third-party services.
+
+We use modern encryption methods (HTTPS) for the transmission of any data to our cloud services.
+
+## 4. Third-Party Services
+Railtrack uses the following third-party services for its operation:
+
+- **Google Firebase (Cloud Firestore & Remote Config):** Used for receiving bug reports and for dynamic app configuration.
+- **Google AdMob:** Used to display advertisements. AdMob may collect usage data and device identifiers for ad personalization. See [Google's Privacy Policy](https://policies.google.com/privacy) for more details.
+- **ViaggiaTreno/Trenitalia APIs:** The app queries public APIs to provide real-time train information. No personal data is sent to these services during queries.
+
+## 5. Data Sharing
+We do not sell your personal data to third parties. Data is shared with the service providers mentioned above only to the extent necessary for app functionality and advertising services. Data may only be shared if required by law or to protect our legal rights.
+
+## 6. Data Retention and Deletion
+- **Local Data:** Preferences and data stored locally can be deleted at any time by clearing the app data from Android settings or by uninstalling the app.
+- **Reports:** Reports sent via Firestore are kept for the time necessary to resolve the reported issue. You can request the deletion of any submitted data by contacting us at the address provided below.
+
+## 7. User Rights
+In accordance with GDPR and other applicable data protection laws, you have the right to access, rectify, or request the deletion of your data. Since the app does not require account creation, most data is manageable directly through your device.
+
+## 8. Contact Us
+For questions or requests regarding your privacy, you can contact us at:
+railtrack.dev@gmail.com
+
+---
+*Note: This policy is subject to change. We recommend checking it regularly.*`
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.innerText.toLowerCase().includes(lang === 'it' ? 'ita' : 'eng')) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            document.getElementById('content').innerHTML = marked.parse(policies[lang]);
+            document.documentElement.lang = lang;
+        }
+
+        setLang('it');
+    </script>
+</body>
+</html>
